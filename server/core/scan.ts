@@ -15,10 +15,10 @@ Jobs.forEach((Item: any) => {
 /**
  * 将受到的数据再塞回去
  */
-export function setData(name: string, data: Object, action: string) {
+export function setData(name: string, data: Object, action: string, index: number) {
     console.log(name, data, action);
     if (list[name]) {
         const JobItem = list[name];
-        if (JobItem[action]) JobItem[action](data);
+        if (JobItem[action]) JobItem[action](data, index);
     }
 }

@@ -12,11 +12,11 @@ class TestJob extends Job {
     }
 
     cleanData() {
-        console.log('数据清洗');
-        this.runtime.pushData(Date.now(), { id: 1 });
+        const time = Date.now();
+        this.pushData(time, { id: 1, time });
     }
 
-    runData(data: Object) {
+    runData(data: Object, index: number) {
         console.log('处理并保存数据', data);
     }
 }
