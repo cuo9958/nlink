@@ -1,0 +1,38 @@
+{
+  "name": "nlink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "webpack",
+    "start": "nodemon --watch './server/**/*' -e ts,tsx --exec 'ts-node' ./server/app.ts",
+    "build": "rm -rf ./dist && tsc --build",
+    "build:webpack": "rm -rf ./dist && ts-node ./scripts/build.ts",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "server": "npm run build && node dist/app.js"
+  },
+  "keywords": [],
+  "author": "545570335@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "@types/config": "0.0.36",
+    "@types/koa": "^2.11.0",
+    "@types/koa-router": "^7.0.42",
+    "axios": "^0.19.0",
+    "config": "^3.2.4",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-router": "^7.4.0",
+    "nanoid": "^2.1.8",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "@types/webpack": "^4.41.0",
+    "nodemon": "^2.0.2",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-loader": "^3.5.4",
+    "webpack": "^4.41.4"
+  }
+}
