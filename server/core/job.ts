@@ -15,6 +15,8 @@ export abstract class Job implements IJob {
     runtime: IRunTime;
     abstract getData(): void;
 
+    abstract nextTick(): void;
+
     abstract runData(data, index): void;
 
     pushData(time, data, action = 'runData') {
@@ -28,6 +30,12 @@ export interface IJob {
      * 获取数据，并标记时间窗口
      */
     getData(): void;
+    /**
+     * 重复计算数据
+     * @param data 计算后的数据
+     * @param map 输入数据
+     */
+    nextTick(data: Object, map: Object[]): void;
     /**
      * 拿到最终数据并存入数据库
      * @param data 数据

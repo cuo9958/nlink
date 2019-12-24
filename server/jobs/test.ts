@@ -11,6 +11,7 @@ class TestJob extends Job {
         }, 5000);
     }
 
+    nextTick(){}
     cleanData() {
         const time = Date.now();
         this.pushData(time, { id: 1, time });
